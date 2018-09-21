@@ -1,0 +1,58 @@
+version: 1.0
+shards:
+  cake-bake:
+    github: vladfaust/cake-bake.cr
+    version: 0.2.1
+
+  callbacks:
+    github: vladfaust/callbacks.cr
+    version: 0.1.1
+
+  core:
+    github: vladfaust/core
+    commit: 32b95bb1d9285b48f14d6513be601764275ba958
+
+  db:
+    github: crystal-lang/crystal-db
+    version: 0.5.0
+
+  dotenv:
+    github: gdotdesign/cr-dotenv
+    version: 0.1.0
+
+  jwt:
+    github: crystal-community/jwt
+    version: 0.3.0
+
+  migrate:
+    github: vladfaust/migrate.cr
+    version: 0.3.0
+
+  pg:
+    github: will/crystal-pg
+    version: 0.15.0
+
+  pool:
+    github: ysbaddaden/pool
+    version: 0.2.3
+
+  prism:
+    github: vladfaust/prism
+    commit: 46e9ec7a214e1976ddc88f465f3c0189e5557c33
+
+  radix:
+    github: luislavena/radix
+    version: 0.3.8
+
+  redis:
+    github: stefanwille/crystal-redis
+    version: 2.0.0
+
+  time_format:
+    github: vladfaust/time_format.cr
+    version: 0.1.1
+
+  validations:
+    github: vladfaust/validations.cr
+    version: 0.1.4
+

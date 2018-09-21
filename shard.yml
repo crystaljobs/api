@@ -1,0 +1,44 @@
+name: crystaljobs-api
+version: 0.1.0
+
+authors:
+  - Vlad Faust <mail@vladfaust.com>
+
+targets:
+  server:
+    main: src/server.cr
+  cake:
+    main: src/cake.cr
+
+crystal: 0.27.0
+
+license: MIT
+
+dependencies:
+  dotenv:
+    github: gdotdesign/cr-dotenv
+    version: ~> 0.1.0
+  jwt:
+    github: crystal-community/jwt
+    version: ~> 0.3.0
+  pg:
+    github: will/crystal-pg
+    version: ~> 0.15.0
+  redis:
+    github: stefanwille/crystal-redis
+    version: ~> 2.0.0
+  prism:
+    github: vladfaust/prism
+    tag: v0.4.0-beta.3
+  core:
+    github: vladfaust/core
+    tag: v0.5.0-beta.3
+  validations:
+    github: vladfaust/validations.cr
+    version: ~> 0.1.4
+  migrate:
+    github: vladfaust/migrate.cr
+    version: ~> 0.3.0
+  cake-bake:
+    github: vladfaust/cake-bake.cr
+    version: ~> 0.2.0
