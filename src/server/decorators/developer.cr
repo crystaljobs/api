@@ -1,3 +1,5 @@
+require "../../ext/string"
+
 module Server::Decorators
   struct Developer
     def initialize(@developer : ::Developer, *, @display = false)
@@ -10,6 +12,7 @@ module Server::Decorators
         builder.field("website", @developer.website.try &.to_s)
         builder.field("country", @developer.country)
         builder.field("display", @developer.display) if @display
+        builder.field("status", @developer.status.to_s.lower_camelcase)
         builder.field("github") do
           builder.object do
             builder.field("id", @developer.github_id)

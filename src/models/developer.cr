@@ -5,6 +5,12 @@ class Developer
   include Core::Schema
   include Validations
 
+  enum Status
+    Pending
+    Approved
+    Declined
+  end
+
   schema developers do
     pkey id : Int32
 
@@ -12,6 +18,7 @@ class Developer
     type website : Union(URI | Nil)
     type country : Union(String | Nil)
     type display : Bool = DB::Default
+    type status : Status = DB::Default
 
     type github_id : Int32
     type github_username : String

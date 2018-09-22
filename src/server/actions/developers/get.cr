@@ -13,18 +13,15 @@ module Server::Actions
 
     def call
       render_display_attribute = false
+      query = Developer.where(id: params["id"].to_i32)
 
-      if auth?.try &.authenticate
-        if auth.dev.id == params["id"]
-          dev = repo.query(Developer.where(id: params["id"].to_i32)).first?
-          render_display_attribute = true
-        else
-          dev = repo.query(Developer.where(id: params["id"].to_i32, display: true)).first?
-        end
+      if auth?.try &.authenticate && auth.dev.id == params["id"]
+        render_display_attribute = true
       else
-        dev = repo.query(Developer.where(id: params["id"].to_i32, display: true)).first?
+        query = query.where(display: true, status: Developer::Status::Approved)
       end
 
+      dev = repo.query(query).first?
       halt!(404) unless dev
 
       json({

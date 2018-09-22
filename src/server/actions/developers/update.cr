@@ -1,23 +1,35 @@
 require "../../decorators/developer"
 require "../../../ext/object"
 
+runtime_env ADMIN_DEVELOPER_IDS
+
 module Server::Actions
   struct Developers::Update
     include Prism::Action
     include Prism::Action::Params
     include Prism::Action::Auth(Server::Auth::Authenticator)
 
+    ADMIN_DEVELOPER_IDS = ENV["ADMIN_DEVELOPER_IDS"].split(",").map(&.to_i32)
+
     authenticate
 
     params do
+      type id : Int32
       type about : String? | Null, validate: {size: (1..300)}
       type website : String? | Null, validate: {regex: %r{^https?://}}
       type country : String? | Null, validate: {size: 2}
       type display : Bool?
+      type status : String?, validate: {in: Developer::Status.names.map(&.lower_camelcase)}
     end
 
     def call
-      dev = repo.query(Developer.where(id: auth.dev.id)).first
+      dev = repo.query(Developer.where(id: params["id"])).first?
+      halt!(404) unless dev
+
+      if status = params["status"]
+        halt!(403, "Only admins can update the status") unless ADMIN_DEVELOPER_IDS.includes?(auth.dev.id)
+        dev.status = Developer::Status.parse(status)
+      end
 
       case params["about"]
       when Null      then dev.about = nil
