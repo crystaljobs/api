@@ -11,7 +11,7 @@ runtime_env HOST, PORT
 require "./utils/custom_log_formatter"
 
 log_handler = Prism::LogHandler.new(logger)
-error_handler = HTTP::ErrorHandler.new(true)
+error_handler = ErrorHandler.new(logger, ENV["APP_ENV"] != "production")
 cors = Prism::CORS.new(allow_headers: %w(accept content-type authorization))
 auth_handler = Server::Auth::Handler.new(logger)
 router = Server::Router.new
