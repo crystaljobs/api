@@ -33,8 +33,16 @@ module Server::Actions
           repo.exec(dev.valid!.update)
         end
       else
+        website = if github_user.blog.size > 0
+                    begin
+                      uri = URI.parse(github_user.blog)
+                      uri if uri.http?
+                    rescue
+                    end
+                  end
+
         dev = Developer.new(
-          website: (URI.parse(github_user.blog) if github_user.blog.size > 0),
+          website: website,
           about: github_user.bio,
           github_id: github_user.id,
           github_username: github_user.login,
