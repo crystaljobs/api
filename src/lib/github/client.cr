@@ -20,7 +20,6 @@ module GitHub
         }.to_json)
 
       if response.status_code == 200
-        logger.debug(response.body)
         AccessToken.from_json(response.body)
       else
         raise "Got a #{response.status_code} response from GitHub: #{response.body}"

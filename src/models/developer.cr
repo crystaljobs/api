@@ -1,9 +1,5 @@
-require "validations"
-require "../ext/uri"
-
 class Developer
-  include Core::Schema
-  include Validations
+  include Atom::Model
 
   enum Status
     Pending
@@ -14,9 +10,9 @@ class Developer
   schema developers do
     pkey id : Int32
 
-    type about : Union(String | Nil)
-    type website : Union(URI | Nil)
-    type country : Union(String | Nil)
+    type about : Union(String, Nil)
+    type website : Union(URI, Nil)
+    type country : Union(String, Nil)
     type display : Bool = DB::Default
     type status : Status = DB::Default
 
@@ -34,5 +30,17 @@ class Developer
     previous_def
 
     invalidate("website", "must be an HTTP(S) URI") if website && !website.not_nil!.http?
+  end
+
+  def to_jwt(jwt)
+    {id: id}.to_json(jwt)
+  end
+
+  def self.from_jwt(jwt)
+    id = jwt["id"].as_i
+    github_id = uninitialized Int32
+    github_username = uninitialized String
+    github_access_token = uninitialized String
+    new(id: id, github_id: github_id, github_username: github_username, github_access_token: github_access_token)
   end
 end

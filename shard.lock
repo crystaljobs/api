@@ -1,16 +1,20 @@
 version: 1.0
 shards:
+  atom:
+    github: atomframework/atom
+    commit: dfc468d99f9c931548e8ef9da0e242b5df6e1dc8
+
+  atom-model:
+    github: atomframework/model
+    commit: 481a14d6aa1db75437686b5f9ab18cd7421b2456
+
+  atom-web:
+    github: atomframework/web
+    commit: 910e547f3a031d566bfe089ff78efddf47cc884b
+
   cake-bake:
     github: vladfaust/cake-bake.cr
     version: 0.2.1
-
-  callbacks:
-    github: vladfaust/callbacks.cr
-    version: 0.1.1
-
-  core:
-    github: vladfaust/core
-    commit: 32b95bb1d9285b48f14d6513be601764275ba958
 
   db:
     github: crystal-lang/crystal-db
@@ -24,29 +28,25 @@ shards:
     github: crystal-community/jwt
     version: 0.3.0
 
+  kilt:
+    github: jeromegn/kilt
+    version: 0.4.0
+
   migrate:
     github: vladfaust/migrate.cr
     version: 0.3.0
+
+  params:
+    github: vladfaust/params.cr
+    version: 0.1.1
 
   pg:
     github: will/crystal-pg
     version: 0.15.0
 
-  pool:
-    github: ysbaddaden/pool
-    version: 0.2.3
-
-  prism:
-    github: vladfaust/prism
-    commit: 46e9ec7a214e1976ddc88f465f3c0189e5557c33
-
   radix:
     github: luislavena/radix
     version: 0.3.8
-
-  redis:
-    github: stefanwille/crystal-redis
-    version: 2.0.0
 
   time_format:
     github: vladfaust/time_format.cr
@@ -54,5 +54,5 @@ shards:
 
   validations:
     github: vladfaust/validations.cr
-    version: 0.1.4
+    version: 0.1.5
 
