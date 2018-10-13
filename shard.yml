@@ -15,7 +15,7 @@ crystal: 0.27.0
 dependencies:
   atom:
     github: atomframework/atom
-    commit: dfc468d
+    commit: 4196bea
   pg:
     github: will/crystal-pg
     version: ~> 0.15.0

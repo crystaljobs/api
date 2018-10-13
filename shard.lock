@@ -2,7 +2,7 @@ version: 1.0
 shards:
   atom:
     github: atomframework/atom
-    commit: dfc468d99f9c931548e8ef9da0e242b5df6e1dc8
+    commit: 4196bea1b49417c7e5eb9b983a983fdb66279d68
 
   atom-model:
     github: atomframework/model
@@ -38,15 +38,23 @@ shards:
 
   params:
     github: vladfaust/params.cr
-    version: 0.1.1
+    version: 0.1.2
 
   pg:
     github: will/crystal-pg
     version: 0.15.0
 
+  pool:
+    github: ysbaddaden/pool
+    version: 0.2.3
+
   radix:
     github: luislavena/radix
     version: 0.3.8
+
+  redis:
+    github: stefanwille/crystal-redis
+    version: 2.1.1
 
   time_format:
     github: vladfaust/time_format.cr
