@@ -12,6 +12,7 @@ struct Views::Developer
       json.field("country", @developer.country)
       json.field("display", @developer.display) if @display
       json.field("status", @developer.status.to_s.lower_camelcase)
+      json.field("createdAt", @developer.created_at)
       json.field("github") do
         json.object do
           json.field("id", @developer.github_id)
