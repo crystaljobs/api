@@ -15,13 +15,13 @@ crystal: 0.27.0
 dependencies:
   atom:
     github: atomframework/atom
-    commit: 4196bea
+    commit: ecbf2fc
   pg:
     github: will/crystal-pg
     version: ~> 0.15.0
   migrate:
     github: vladfaust/migrate.cr
-    version: ~> 0.3.0
+    version: ~> 0.4.0
   cake-bake:
     github: vladfaust/cake-bake.cr
     version: ~> 0.2.0

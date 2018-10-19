@@ -2,11 +2,11 @@ version: 1.0
 shards:
   atom:
     github: atomframework/atom
-    commit: 4196bea1b49417c7e5eb9b983a983fdb66279d68
+    commit: ecbf2fcb46607b14f81066458a8acc96ac558ef2
 
   atom-model:
     github: atomframework/model
-    commit: 481a14d6aa1db75437686b5f9ab18cd7421b2456
+    commit: 68602d567fc6305034bdf8ce6a34a496c45e624b
 
   atom-web:
     github: atomframework/web
@@ -34,11 +34,11 @@ shards:
 
   migrate:
     github: vladfaust/migrate.cr
-    version: 0.3.0
+    version: 0.4.0
 
   params:
     github: vladfaust/params.cr
-    version: 0.1.2
+    version: 0.1.3
 
   pg:
     github: will/crystal-pg

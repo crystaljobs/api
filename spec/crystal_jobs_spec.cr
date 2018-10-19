@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Api do
+describe CrystalJobs do
   # TODO: Write tests
 
   it "works" do

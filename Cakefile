@@ -1,5 +1,6 @@
 require "pg"
 require "migrate"
+
 require "atom/env"
 require "atom/logger"
 

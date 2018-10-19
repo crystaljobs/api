@@ -3,5 +3,4 @@
 /bin/
 /.shards/
 *.dwarf
-/.env*
-!/*.example
+/.env.*.local
