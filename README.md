@@ -1,27 +1,11 @@
-# crystal_jobs
+<img align="right" width="150" height="150" src="https://avatars0.githubusercontent.com/u/42606971?s=150&v=4">
 
-TODO: Write a description here
+# Crystal Jobs
 
-## Installation
+The perfect place to find a [Crystal](https://crystal-lang.org/) developer.
 
-TODO: Write installation instructions here
+## API
 
-## Usage
+[![Built with Crystal](https://img.shields.io/badge/built%20with-crystal-000000.svg?style=flat-square)](https://crystal-lang.org/)
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
-
-## Contributing
-
-1. Fork it (<https://github.com/your-github-user/crystal_jobs/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-
-## Contributors
-
-- [your-github-user](https://github.com/your-github-user) Vlad Faust - creator, maintainer
+This repository contains reference code for https://crystaljobs.org API Backend.
